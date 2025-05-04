@@ -1,4 +1,5 @@
 require('dotenv').config();
+const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://cyrusazad2442:678Triple98212!@iamfyrus.ipjv5kz.mongodb.net/?retryWrites=true&w=majority&appName=IamFyrus', { useNewUrlParser: true, useUnifiedTopology: true });
 
