@@ -5,6 +5,14 @@ mongoose.connect('mongodb+srv://cyrusazad2442:678Triple98212!@iamfyrus.ipjv5kz.m
 
 let Person;
 
+const personSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  age: Number,
+  favoriteFoods: [String]
+});
+
+Person = mongoose.model('Person', personSchema);
+
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
 };
