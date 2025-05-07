@@ -6,21 +6,21 @@ mongoose.connect('mongodb+srv://cyrusazad2442:678Triple98212!@iamfyrus.ipjv5kz.m
 let Person;
 
 const personSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  name: String,
   age: Number,
   favoriteFoods: [String]
 });
 
 Person = mongoose.model('Person', personSchema);
 
-const createAndSavePerson = (done) => {
+const createAndSavePerson = function(done)  {
   const person = new Person({
     name: "John Doe",
     age: 30,
     favoriteFoods: ["Pizza", "Burger"]
   });
-  person.save((err, data) => {
-    if (err) return done(err);
+  person.save(function(err, data) {
+    if (err) return console.error(err);
     done(null, data);
   });
 
